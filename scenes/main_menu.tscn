@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://7doy5acow1k2"]
+
+[ext_resource type="Script" uid="uid://da6jg7wf2uxng" path="res://scripts/main_menu.gd" id="1_oa1go"]
+[ext_resource type="Texture2D" uid="uid://2nrpfkxjeq6e" path="res://assets/mainMenuBackground.png" id="2_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://b8mjsh03t4u4f" path="res://assets/gameNameLabel.png" id="3_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://i17c7s1fxmlv" path="res://assets/buttons/1.png" id="4_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://w42i4vktvmch" path="res://assets/buttons/2.png" id="5_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://bg5bqb45o5bt0" path="res://assets/buttons/3.png" id="6_flqon"]
+[ext_resource type="Texture2D" uid="uid://c7l8cfvldq4y8" path="res://assets/buttons/4.png" id="7_rcqid"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -37.0001
+offset_top = 9.0
+offset_right = -989.0
+offset_bottom = -388.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.1111, 1.88889)
+script = ExtResource("1_oa1go")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.4738
+offset_top = -15.8823
+offset_right = 18.4738
+offset_bottom = -15.8823
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tbmy8")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="GameName" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.051
+offset_top = 58.7647
+offset_right = 149.949
+offset_bottom = 118.765
+grow_horizontal = 2
+texture = ExtResource("3_jk1qb")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -102.0
+offset_right = 104.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.985999, 1.07024)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Easy Level" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("4_5dd4i")
+icon_alignment = 1
+
+[node name="Medium Level" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_lgwnu")
+icon_alignment = 1
+
+[node name="Hard Level" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_flqon")
+icon_alignment = 1
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_rcqid")
+icon_alignment = 1
