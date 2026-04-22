@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://6hujd4pyhoo2"]
+
+[ext_resource type="Script" uid="uid://saj6tdaaquc4" path="res://scripts/game.gd" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://di5tf6i8wlg14" path="res://scenes/HUD.tscn" id="2_e2o6t"]
+[ext_resource type="AudioStream" uid="uid://dyx4htdkg61b7" path="res://assets/sounds/match.wav.mp3" id="3_feb5d"]
+[ext_resource type="AudioStream" uid="uid://ieu20ujjm7fm" path="res://assets/sounds/background_music.mp3" id="4_7jktm"]
+[ext_resource type="AudioStream" uid="uid://btkbul0y3vt2o" path="res://assets/sounds/gameover.wav.mp3" id="5_7jktm"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2o6t")
+
+[node name="HUD" parent="." instance=ExtResource("2_e2o6t")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.126807, 0.268758, 0.126797, 1)
+
+[node name="Grid" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.467
+anchor_bottom = 1.448
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -538.984
+offset_bottom = -494.304
+grow_horizontal = 2
+grow_vertical = 2
+columns = 13
+
+[node name="MatchSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_feb5d")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7jktm")
+volume_db = 24.0
+parameters/looping = true
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7jktm")
+
+[node name="ToggleMusicButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1773.0
+offset_top = 704.0
+offset_right = 1865.0
+offset_bottom = 746.0
+text = "🔊 Music
+"
+
+[connection signal="pressed" from="ToggleMusicButton" to="." method="_on_toggle_music_button_pressed"]

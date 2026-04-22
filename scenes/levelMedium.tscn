@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnpx6o5p6dy5d"]
+
+[ext_resource type="PackedScene" uid="uid://6hujd4pyhoo2" path="res://scenes/game.tscn" id="1_qx62v"]
+[ext_resource type="Script" uid="uid://cw1xy5yqgycah" path="res://scripts/levelMedium.gd" id="2_wwjks"]
+[ext_resource type="FontFile" uid="uid://b5832lobxhu5a" path="res://assets/fonts/Mont-HeavyDEMO.otf" id="3_8cubj"]
+
+[node name="Game" instance=ExtResource("1_qx62v")]
+script = ExtResource("2_wwjks")
+
+[node name="Menu" type="Button" parent="." index="3"]
+layout_mode = 0
+offset_left = 1641.0
+offset_top = 801.0
+offset_right = 1853.0
+offset_bottom = 931.0
+theme_override_fonts/font = ExtResource("3_8cubj")
+theme_override_font_sizes/font_size = 50
+text = "Menu
+"
